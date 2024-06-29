@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Project Evaluation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="evaluation-container">
+        <h2>Computer Science Project</h2>
+        <form id="evaluationForm">
+            <label>Group Members: <input type="text" name="groupMembers" required></label><br>
+            <label>Group Number: <input type="number" name="groupNumber" required></label><br>
+            <label>Project Title: <input type="text" name="projectTitle" required></label><br>
+            <table>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Developing (0-10)</th>
+                    <th>Accomplished (10-15)</th>
+                </tr>
+                <tr>
+                    <td>Articulate requirements</td>
+                    <td><input type="number" name="articulateRequirements" min="0" max="10" required></td>
+                    <td><input type="number" name="articulateRequirementsAcc" min="10" max="15" required></td>
+                </tr>
+                <tr>
+                    <td>Choose appropriate tools and methods for each task</td>
+                    <td><input type="number" name="toolsMethods" min="0" max="10" required></td>
+                    <td><input type="number" name="toolsMethodsAcc" min="10" max="15" required></td>
+                </tr>
+                <tr>
+                    <td>Give clear and coherent oral presentation</td>
+                    <td><input type="number" name="oralPresentation" min="0" max="10" required></td>
+                    <td><input type="number" name="oralPresentationAcc" min="10" max="15" required></td>
+                </tr>
+                <tr>
+                    <td>Functioned well as a team</td>
+                    <td><input type="number" name="teamwork" min="0" max="10" required></td>
+                    <td><input type="number" name="teamworkAcc" min="10" max="15" required></td>
+                </tr>
+            </table>
+            <label>Judge's name: <input type="text" name="judgeName" required></label><br>
+            <label>Comments: <textarea name="comments" required></textarea></label><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="submissionMessage"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
