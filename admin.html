@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Project Evaluations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h2>Project Evaluation Averages</h2>
+        <button onclick="fetchAverages()">Get Averages</button>
+        <div id="averagesContainer"></div>
+    </div>
+    <script>
+        function fetchAverages() {
+            fetch('/get_averages')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('averagesContainer');
+                container.innerHTML = '<table><tr><th>Group Number</th><th>Group Members</th><th>Project Title</th><th>Average Grade</th></tr>';
+                data.forEach(row => {
+                    container.innerHTML += `<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
+                });
+                container.innerHTML += '</table>';
+            });
+        }
+    </script>
+</body>
+</html>
+
